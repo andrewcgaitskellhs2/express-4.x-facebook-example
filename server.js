@@ -56,6 +56,11 @@ var pgport = vcap_services.mypostgres[0].credentials.port
 var pguri = vcap_services.mypostgres[0].credentials.uri
 var pgusername = vcap_services.mypostgres[0].credentials.username
 
+
+var conString = "postgres://"+pgusername+":"pgpassword"+@"+pghost+":"+pgport+"/YourDatabase";
+
+
+
 // Configure view engine to render EJS templates.
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
