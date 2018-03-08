@@ -57,9 +57,12 @@ var pguri = vcap_services.mypostgres[0].credentials.uri
 var pgusername = vcap_services.mypostgres[0].credentials.username
 
 
-var conString = "postgres://"+pgusername+":"pgpassword"+@"+pghost+":"+pgport+"/YourDatabase";
-
-
+var conString = "postgres://"+pgusername+":"pgpassword"+@"+pghost+":"+pgport;//+"/YourDatabase";
+ 
+app.use(session({
+  store: new (require('connect-pg-simple')(express.session))(),
+  conString: conString
+}));
 
 // Configure view engine to render EJS templates.
 app.set('views', __dirname + '/views');
