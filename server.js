@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var passport = require('passport');
 var Strategy = require('passport-github2').Strategy;
 var pg = require('pg');
