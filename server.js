@@ -1,6 +1,6 @@
 var express = require('express');
 var passport = require('passport');
-var Strategy = require('passport-facebook').Strategy;
+var Strategy = require('passport-github').Strategy;
 
 
 // Configure the Facebook strategy for use by Passport.
