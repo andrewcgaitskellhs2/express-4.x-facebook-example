@@ -8,8 +8,8 @@ To install this example on your computer, clone the repository and install
 dependencies.
 
 ```bash
-$ git clone git@github.com:passport/express-4.x-facebook-example.git
-$ cd express-4.x-facebook-example
+$ git clone https://github.com/andrewcgaitskellhs2/express-github-example.git
+$ cd express-github-example
 $ npm install
 ```
 
