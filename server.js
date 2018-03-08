@@ -62,7 +62,9 @@ var conString = "postgres://"+pgusername+":"+pgpassword+"@"+pghost+":"+pgport;//
  
 app.use(session({
   store: new (require('connect-pg-simple')(session))(),
-  conString: conString
+  conString: conString,
+  resave: true,
+  saveUninitialized: true
 }));
 
 // Configure view engine to render EJS templates.
