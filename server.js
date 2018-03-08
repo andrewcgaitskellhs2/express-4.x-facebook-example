@@ -61,7 +61,7 @@ var pgusername = vcap_services.postgres[0].credentials.username
 var conString = "postgres://"+pgusername+":"+pgpassword+"@"+pghost+":"+pgport;//+"/YourDatabase";
  
 app.use(session({
-  store: new (require('connect-pg-simple')(express.session))(),
+  store: new (require('connect-pg-simple')(session))(),
   conString: conString
 }));
 
