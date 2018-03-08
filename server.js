@@ -65,6 +65,7 @@ app.use(session({
   conString: conString,
   resave: true,
   saveUninitialized: true
+    secret: 'keyboard cat'
 }));
 
 // Configure view engine to render EJS templates.
