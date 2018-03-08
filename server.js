@@ -48,13 +48,13 @@ passport.deserializeUser(function(obj, cb) {
 var app = express();
 
 var vcap_services = JSON.parse(process.env.VCAP_SERVICES)
-var pghost = vcap_services.mypostgres[0].credentials.host
-var pgjdbcuri = vcap_services.mypostgres[0].credentials.jdbcuri
-var pgname = vcap_services.mypostgres[0].credentials.name
-var pgpassword = vcap_services.mypostgres[0].credentials.password
-var pgport = vcap_services.mypostgres[0].credentials.port
-var pguri = vcap_services.mypostgres[0].credentials.uri
-var pgusername = vcap_services.mypostgres[0].credentials.username
+var pghost = vcap_services.postgres[0].credentials.host
+var pgjdbcuri = vcap_services.postgres[0].credentials.jdbcuri
+var pgname = vcap_services.postgres[0].credentials.name
+var pgpassword = vcap_services.postgres[0].credentials.password
+var pgport = vcap_services.postgres[0].credentials.port
+var pguri = vcap_services.postgres[0].credentials.uri
+var pgusername = vcap_services.postgres[0].credentials.username
 
 
 var conString = "postgres://"+pgusername+":"+pgpassword+"@"+pghost+":"+pgport;//+"/YourDatabase";
