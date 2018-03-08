@@ -46,6 +46,15 @@ passport.deserializeUser(function(obj, cb) {
 // Create a new Express application.
 var app = express();
 
+var vcap_services = JSON.parse(process.env.VCAP_SERVICES)
+var pghost = vcap_services.mypostgres[0].credentials.host
+var pgjdbcuri = vcap_services.mypostgres[0].credentials.jdbcuri
+var pgname = vcap_services.mypostgres[0].credentials.name
+var pgpassword = vcap_services.mypostgres[0].credentials.password
+var pgport = vcap_services.mypostgres[0].credentials.port
+var pguri = vcap_services.mypostgres[0].credentials.uri
+var pgusername = vcap_services.mypostgres[0].credentials.username
+
 // Configure view engine to render EJS templates.
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
